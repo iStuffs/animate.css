@@ -1,17 +1,23 @@
-@keyframes rotateInDownRight {
-  0% {
-    transform-origin: right bottom;
-    transform: rotate3d(0, 0, 1, 45deg);
-    opacity: 0;
-  }
+@mixin rotateInDownRight-keyframes {
+    @keyframes rotateInDownRight {
+      0% {
+        transform-origin: right bottom;
+        transform: rotate3d(0, 0, 1, 45deg);
+        opacity: 0;
+      }
 
-  100% {
-    transform-origin: right bottom;
-    transform: none;
-    opacity: 1;
-  }
+      100% {
+        transform-origin: right bottom;
+        transform: none;
+        opacity: 1;
+      }
+    }
 }
 
-.rotateInDownRight {
-  animation-name: rotateInDownRight;
+@mixin rotateInDownRight {
+    @include rotateInDownRight-keyframes;
+
+    .rotateInDownRight {
+      animation-name: rotateInDownRight;
+    }
 }

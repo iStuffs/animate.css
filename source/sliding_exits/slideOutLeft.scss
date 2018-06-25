@@ -1,14 +1,20 @@
-@keyframes slideOutLeft {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+@mixin slideOutLeft-keyframes {
+    @keyframes slideOutLeft {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
 
-  100% {
-    visibility: hidden;
-    transform: translate3d(-100%, 0, 0);
-  }
+      100% {
+        visibility: hidden;
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
 }
 
-.slideOutLeft {
-  animation-name: slideOutLeft;
+@mixin slideOutLeft {
+    @include slideOutLeft-keyframes;
+
+    .slideOutLeft {
+      animation-name: slideOutLeft;
+    }
 }

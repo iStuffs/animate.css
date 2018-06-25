@@ -1,15 +1,21 @@
-@keyframes fadeInLeftBig {
-  0% {
-    opacity: 0;
-    transform: translate3d(-2000px, 0, 0) scaleX(2);
-  }
+@mixin fadeInLeftBig-keyframes {
+  @keyframes fadeInLeftBig {
+    0% {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0) scaleX(2);
+    }
 
-  100% {
-    opacity: 1;
-    transform: none;
+    100% {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-.fadeInLeftBig {
-  animation-name: fadeInLeftBig;
+@mixin fadeInLeftBig {
+  @include fadeInLeftBig-keyframes;
+
+  .fadeInLeftBig {
+    animation-name: fadeInLeftBig;
+  }
 }

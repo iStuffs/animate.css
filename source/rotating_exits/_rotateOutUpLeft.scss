@@ -1,16 +1,22 @@
-@keyframes rotateOutUpLeft {
-  0% {
-    transform-origin: left bottom;
-    opacity: 1;
-  }
+@mixin rotateOutUpLeft-keyframes {
+    @keyframes rotateOutUpLeft {
+      0% {
+        transform-origin: left bottom;
+        opacity: 1;
+      }
 
-  100% {
-    transform-origin: left bottom;
-    transform: rotate3d(0, 0, 1, -45deg);
-    opacity: 0;
-  }
+      100% {
+        transform-origin: left bottom;
+        transform: rotate3d(0, 0, 1, -45deg);
+        opacity: 0;
+      }
+    }
 }
 
-.rotateOutUpLeft {
-  animation-name: rotateOutUpLeft;
+@mixin rotateOutUpLeft {
+    @include rotateOutUpLeft-keyframes;
+
+    .rotateOutUpLeft {
+      animation-name: rotateOutUpLeft;
+    }
 }

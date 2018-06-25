@@ -1,15 +1,21 @@
-@keyframes bounceOutRight {
-  20% {
-    opacity: 1;
-    transform: translate3d(-20px, 0, 0) scaleX(.9);
-  }
+@mixin bounceOutRight-keyframes {
+  @keyframes bounceOutRight {
+    20% {
+      opacity: 1;
+      transform: translate3d(-20px, 0, 0) scaleX(.9);
+    }
 
-  100% {
-    opacity: 0;
-    transform: translate3d(2000px, 0, 0) scaleX(2);
+    100% {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0) scaleX(2);
+    }
   }
 }
 
-.bounceOutRight {
-  animation-name: bounceOutRight;
+@mixin bounceOutRight {
+  @include bounceOutRight-keyframes;
+
+  .bounceOutRight {
+    animation-name: bounceOutRight;
+  }
 }

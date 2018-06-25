@@ -1,16 +1,22 @@
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
-@keyframes rollOut {
-  0% {
-    opacity: 1;
-  }
+@mixin rollOut-keyframes {
+    @keyframes rollOut {
+      0% {
+        opacity: 1;
+      }
 
-  100% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
-  }
+      100% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+      }
+    }
 }
 
-.rollOut {
-  animation-name: rollOut;
+@mixin rollOut {
+    @include rollOut-keyframes;
+
+    .rollOut {
+      animation-name: rollOut;
+    }
 }

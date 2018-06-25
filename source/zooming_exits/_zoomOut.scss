@@ -1,18 +1,24 @@
-@keyframes zoomOut {
-  0% {
-    opacity: 1;
-  }
+@mixin zoomOut-keyframes {
+    @keyframes zoomOut {
+      0% {
+        opacity: 1;
+      }
 
-  50% {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-  }
+      50% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+      }
 
-  100% {
-    opacity: 0;
-  }
+      100% {
+        opacity: 0;
+      }
+    }
 }
 
-.zoomOut {
-  animation-name: zoomOut;
+@mixin zoomOut {
+    @include zoomOut-keyframes;
+
+    .zoomOut {
+      animation-name: zoomOut;
+    }
 }

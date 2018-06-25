@@ -1,14 +1,20 @@
-@keyframes fadeOutDownBig {
-  0% {
-    opacity: 1;
-  }
+@mixin fadeOutDownBig-keyframes {
+    @keyframes fadeOutDownBig {
+      0% {
+        opacity: 1;
+      }
 
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 2000px, 0);
-  }
+      100% {
+        opacity: 0;
+        transform: translate3d(0, 2000px, 0);
+      }
+    }
 }
 
-.fadeOutDownBig {
-  animation-name: fadeOutDownBig;
+@mixin fadeOutDownBig {
+    @include fadeOutDownBig-keyframes;
+
+    .fadeOutDownBig {
+      animation-name: fadeOutDownBig;
+    }
 }

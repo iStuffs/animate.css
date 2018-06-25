@@ -1,14 +1,20 @@
-@keyframes fadeOutDown {
-  0% {
-    opacity: 1;
-  }
+@mixin fadeOutDown-keyframes {
+    @keyframes fadeOutDown {
+      0% {
+        opacity: 1;
+      }
 
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
+      100% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+    }
 }
 
-.fadeOutDown {
-  animation-name: fadeOutDown;
+@mixin fadeOutDown {
+    @include fadeOutDown-keyframes;
+
+    .fadeOutDown {
+      animation-name: fadeOutDown;
+    }
 }

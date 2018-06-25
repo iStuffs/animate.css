@@ -1,16 +1,22 @@
-@keyframes rotateOut {
-  0% {
-    transform-origin: center;
-    opacity: 1;
-  }
+@mixin rotateOut-keyframes {
+    @keyframes rotateOut {
+      0% {
+        transform-origin: center;
+        opacity: 1;
+      }
 
-  100% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, 200deg);
-    opacity: 0;
-  }
+      100% {
+        transform-origin: center;
+        transform: rotate3d(0, 0, 1, 200deg);
+        opacity: 0;
+      }
+    }
 }
 
-.rotateOut {
-  animation-name: rotateOut;
+@mixin rotateOut {
+    @include rotateOut-keyframes;
+
+    .rotateOut {
+      animation-name: rotateOut;
+    }
 }

@@ -1,15 +1,21 @@
-@keyframes fadeInUpBig {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 2000px, 0) scaleY(3);
-  }
+@mixin fadeInUpBig-keyframes {
+  @keyframes fadeInUpBig {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 2000px, 0) scaleY(3);
+    }
 
-  100% {
-    opacity: 1;
-    transform: none;
+    100% {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
-.fadeInUpBig {
-  animation-name: fadeInUpBig;
+@mixin fadeInUpBig {
+  @keyframes fadeInUpBig-keyframes;
+
+  .fadeInUpBig {
+    animation-name: fadeInUpBig;
+  }
 }
